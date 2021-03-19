@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<title>{{page.title | escape}} - {{site.title}}</title>
-
 <div class="post-top">
   <div class="post-background">
     <img src="{{page.background | relative_url}}" ondragstart="return false;"/>
@@ -15,7 +13,12 @@ layout: default
     {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
     <p class="post-meta">{{ page.date | date: date_format }}</p>
     {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
-    <p class="post-meta"><img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time}}분 소요</p>
+    {%- if read_time < 1 -%}
+    {%- assign read_time_text = "1분 이하" -%}
+    {%- else -%}
+    {%- assign read_time_text = read_time | append: "분" -%}
+    {%- endif -%}
+    <p class="post-meta"><img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time_text}} 소요</p>
   </div>
 </div>
 <div class="post-contents">

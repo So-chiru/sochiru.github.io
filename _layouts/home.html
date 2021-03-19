@@ -45,8 +45,13 @@ layout: default
             <div class="metadata">
               {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
               {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
+              {%- if read_time < 1 -%}
+              {%- assign read_time_text = "1분 이하" -%}
+              {%- else -%}
+              {%- assign read_time_text = read_time | append: "분" -%}
+              {%- endif -%}
 
-              <span class="post-meta">{{ post.date | date: date_format }} 게시, <img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time}}분 소요</span>
+              <span class="post-meta">{{ post.date | date: date_format }} 게시, <img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time_text}} 소요</span>
             </div>
 
             <div class="excerpt">
