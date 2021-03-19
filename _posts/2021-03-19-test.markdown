@@ -7,9 +7,7 @@ background: /assets/posts/2021-03-19-test/background.jpg
 ---
 
 무야호오~~~
-
-<img src="{{ '/assets/posts/2021-03-19-test/screenshot.png' | relative_url }}">
-
+<img data-image-viewer src="{{ '/assets/posts/2021-03-19-test/screenshot.png' | relative_url }}">
 블로그 만드신만큼 신나시는거지~
 
 ```rust

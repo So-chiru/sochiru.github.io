@@ -13,7 +13,11 @@ const hideImage = ev => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('')
+  const images = document.querySelectorAll('img[data-image-viewer]')
+
+  images.onClick = () => {
+    alert('hi')
+  }
 })
 
 if (darkMode) {

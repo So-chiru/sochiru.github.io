@@ -16,6 +16,8 @@ html.dark .post-top {
 
 .post-top {
   height: $post-background-height;
+  width: 95%;
+  margin: auto;
 
   h1,
   h2,
@@ -71,7 +73,7 @@ html.dark .post-top {
   }
 
   .post-info {
-    position: relative;
+    position: absolute;
     z-index: 100;
 
     letter-spacing: $text-default-letter-spacing;
@@ -79,19 +81,36 @@ html.dark .post-top {
     top: $post-background-height - 150px;
 
     @media screen and (max-width: $page-width) {
-      left: 5%;
+      margin-left: 5%;
+    }
+
+    @media screen and (max-width: $mobile-page-width) {
+      top: $post-background-height - 100px;
     }
 
     .post-title {
       font-size: 36px;
+
+      @media screen and (max-width: $mobile-page-width) {
+        font-size: 32px;
+      }
     }
 
     .post-meta {
-      font-size: 20px;
+      font-size: 18px;
       margin-top: -3px;
       font-weight: normal;
       color: $text-sub;
       margin-bottom: 3px;
+
+      @media screen and (max-width: $mobile-page-width) {
+        font-size: 14px;
+
+        .icon {
+          width: 14px;
+          height: 14px;
+        }
+      }
 
       .icon {
         top: 4px;
@@ -137,6 +156,11 @@ html.dark .post-top {
   position: relative;
   z-index: 1000;
   max-width: 95%;
+  margin: auto;
+
+  @media screen and (max-width: $mobile-page-width) {
+    margin-top: 5vh;
+  }
 }
 
 .post-comments {

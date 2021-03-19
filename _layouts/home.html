@@ -7,7 +7,7 @@ layout: default
 
   <div class="meta">
     <div class="contents">
-      <img class="profile-image" src="https://www.gravatar.com/avatar/419a0140e7723838e6bd8ab3d2325b7d?s=90"></img>
+      <img class="profile-image" src="https://www.gravatar.com/avatar/419a0140e7723838e6bd8ab3d2325b7d?s=200"></img>
       <div class="texts">
         <h1 class="title">{{ site.title | escape }}</h1>
         <h3 class="subtitle">{{ site.subtitle | escape }}</h3>
@@ -56,7 +56,7 @@ layout: default
         </div>
       {%- endfor -%}
     {%- else -%}
-      <p>게시글이 없어요.</p>
+      <p class="no-posts">이 블로그는 아직 아무 게시글도 없어요.</p>
     {%- endif -%}
   </div>
 </div>
