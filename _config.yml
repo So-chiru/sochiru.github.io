@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 내 블로그
+title: 소블로그
 subtitle: >-
-  잡생각
+  개발 일지, 잡글 올리는 공간
 
 baseurl: ""
 url: "https://blog.sochiru.pw"

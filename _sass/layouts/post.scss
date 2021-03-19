@@ -44,7 +44,8 @@ html.dark .post-top {
   .post-background {
     img {
       position: relative;
-      min-width: 100vw;
+      min-width: 100%;
+      width: 100%;
       min-height: 100%;
     }
   }
@@ -155,7 +156,7 @@ html.dark .post-top {
 .post-contents {
   position: relative;
   z-index: 1000;
-  max-width: 95%;
+  width: 95%;
   margin: auto;
 
   @media screen and (max-width: $mobile-page-width) {

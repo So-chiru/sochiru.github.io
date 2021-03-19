@@ -50,7 +50,7 @@ layout: default
             </div>
 
             <div class="excerpt">
-              <span>{{ post.content | strip_html | strip_newlines | truncate: 128 | truncatewords: 16 }}</span>
+              <span>{{ post.content | strip_html | normalize_whitespace | strip_newlines | truncate: 128 | truncatewords: 16 }}</span>
             </div>
           </div>
         </div>

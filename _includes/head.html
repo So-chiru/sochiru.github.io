@@ -1,9 +1,24 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%- if page.title -%}
+  <title>{{page.title | escape | default: site.title | append: ' - ' | append: site.title}}</title>
+  {%- else -%}
+  <title>{{site.title}}</title>
+  {%- endif -%}
+  <meta name="description"
+    content="{{ page.content | strip_html | normalize_whitespace | strip_newlines | truncate: 256 | truncatewords: 20 }}">
+  <meta name="tags" content="{{page.tags | join: ', ' | default: '기술, 테크, 일상, 블로그'}}">
+  <meta name="og:title" content="{{ page.title | default: site.title }}">
+  <meta name="og:description" content="{{ site.subtitle }}">
+  <meta name="og:type" content="website">
+  {%- if page.background -%}
+  <meta name="og:image" content="{{page.background | absolute_url}}">
+  {%- endif -%}
   <script src="{{ "/assets/main.js" | relative_url }}"></script>
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
+  {%- feed_meta -%}
   {%- if jekyll.environment == 'production' -%}
-    <!-- 프로덕션 사이트 :) -->
+  <!-- 프로덕션 사이트 :) -->
   {%- endif -%}
 </head>

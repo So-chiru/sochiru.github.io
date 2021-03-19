@@ -15,9 +15,12 @@ const hideImage = ev => {
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('img[data-image-viewer]')
 
-  images.onClick = () => {
-    alert('hi')
-  }
+  images.forEach(v => {
+    console.log(v)
+    v.onclick = () => {
+      alert('hi')
+    }
+  })
 })
 
 if (darkMode) {
