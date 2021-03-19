@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<title>{{page.title | escape}} - {{site.title}}</title>
+
+<div class="post-top">
+  <div class="post-background">
+    <img src="{{page.background | relative_url}}" ondragstart="return false;"/>
+  </div>
+  <div class="post-background-layer"></div>
+
+  <div class="post-info">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
+    <p class="post-meta">{{ page.date | date: date_format }}</p>
+    {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
+    <p class="post-meta"><img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time}}분 소요</p>
+  </div>
+</div>
+<div class="post-contents">
+  <div class="post-context">
+    {{ content }}
+  </div>
+</div>
+<div class="post-comments">
+  <div id="commentsUtterances"></div>
+  <script>
+    let script = document.createElement('script')
+    script.src = 'https://utteranc.es/client.js'
+    script.setAttribute('repo', 'So-chiru/sochiru.github.io')
+    script.setAttribute('issue-term', 'pathname')
+    script.setAttribute('label', 'comment')
+    script.crossOrigin = 'anonymouse'
+    script.async = true
+    script.setAttribute('theme', window.darkMode ? 'github-dark' : 'github-light')
+
+    document.getElementById('commentsUtterances').replaceWith(script)
+  </script>
+</div>

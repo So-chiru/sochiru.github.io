@@ -1,0 +1,150 @@
+@import '../global.scss';
+
+html.dark .post-top {
+  .post-background-layer {
+    @include scrimGradient($dark-theme-background, 'to top');
+  }
+
+  .post-info {
+    .post-meta {
+      .icon {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.post-top {
+  height: $post-background-height;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  p {
+    margin: unset;
+  }
+
+  .post-background,
+  .post-background-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+
+    width: 100%;
+    height: $post-background-height;
+  }
+
+  .post-background {
+    img {
+      position: relative;
+      min-width: 100vw;
+      min-height: 100%;
+    }
+  }
+
+  .post-background-layer {
+    z-index: 10;
+    background: linear-gradient(
+      to top,
+      hsl(0, 0%, 100%) 0%,
+      hsla(0, 0%, 100%, 0.987) 8.1%,
+      hsla(0, 0%, 100%, 0.951) 15.5%,
+      hsla(0, 0%, 100%, 0.896) 22.5%,
+      hsla(0, 0%, 100%, 0.825) 29%,
+      hsla(0, 0%, 100%, 0.741) 35.3%,
+      hsla(0, 0%, 100%, 0.648) 41.2%,
+      hsla(0, 0%, 100%, 0.55) 47.1%,
+      hsla(0, 0%, 100%, 0.45) 52.9%,
+      hsla(0, 0%, 100%, 0.352) 58.8%,
+      hsla(0, 0%, 100%, 0.259) 64.7%,
+      hsla(0, 0%, 100%, 0.175) 71%,
+      hsla(0, 0%, 100%, 0.104) 77.5%,
+      hsla(0, 0%, 100%, 0.049) 84.5%,
+      hsla(0, 0%, 100%, 0.013) 91.9%,
+      hsla(0, 0%, 100%, 0) 100%
+    );
+  }
+
+  .post-info {
+    position: relative;
+    z-index: 100;
+
+    letter-spacing: $text-default-letter-spacing;
+    font-weight: bold;
+    top: $post-background-height - 150px;
+
+    @media screen and (max-width: $page-width) {
+      left: 5%;
+    }
+
+    .post-title {
+      font-size: 36px;
+    }
+
+    .post-meta {
+      font-size: 20px;
+      margin-top: -3px;
+      font-weight: normal;
+      color: $text-sub;
+      margin-bottom: 3px;
+
+      .icon {
+        top: 4px;
+        position: relative;
+        user-select: none;
+
+        filter: invert(0.4);
+      }
+    }
+  }
+}
+
+.post-context {
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -1px;
+
+    br {
+      display: inline;
+    }
+  }
+
+  & > br {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0.8em 40px;
+    background: $blockquote-background;
+    color: $blockquote-text;
+    border-radius: $card-radius;
+    margin: 1em 0px;
+  }
+}
+
+.post-contents {
+  position: relative;
+  z-index: 1000;
+  max-width: 95%;
+}
+
+.post-comments {
+  margin-top: 50px;
+  position: relative;
+
+  .utterances {
+    max-width: unset;
+    width: 100%;
+  }
+}

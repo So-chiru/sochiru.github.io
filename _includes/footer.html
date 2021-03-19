@@ -1,0 +1,21 @@
+<div class="footer">
+  <div class="center">
+    <h3>{{ site.title }}</h3>
+    <p>
+      본 페이지에 있는 내용의 저작권은 각 내용의 원작자에게 귀속됩니다.
+    </p>
+    <div class="icons">
+      {%- if site.github_id -%}
+      <img src="{{ '/assets/svgs/github.png' | relative_url }}"
+        onclick="openNewTab('https://github.com/{{site.github_id}}')"></img>
+      {%- endif -%}
+      {%- if site.twitter_id -%}
+      <img src="{{ '/assets/svgs/twitter.svg' | relative_url }}"
+        onclick="openNewTab('https://twitter.com/{{site.twitter_id}}')"></img>
+      {%- endif -%}
+      {%- if site.email -%}
+      <img src="{{ '/assets/svgs/email.svg' | relative_url }}" onclick="openNewTab('mailto:{{site.email}}')"></img>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

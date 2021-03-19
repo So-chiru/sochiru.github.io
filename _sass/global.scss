@@ -1,0 +1,64 @@
+$card-holder-background: #cfcfcf;
+$card-radius: 16px;
+
+$footer-background: rgba(173, 204, 241, 0.12);
+
+$page-width: 1100px;
+
+$profile-size: 90px;
+
+$shadow-level1: 0 0.4px 1.3px -8px rgba(0, 0, 0, 0.003),
+  0 1.1px 3.4px -8px rgba(0, 0, 0, 0.008),
+  0 2.2px 6.9px -8px rgba(0, 0, 0, 0.016),
+  0 4.3px 14.2px -8px rgba(0, 0, 0, 0.032), 0 10px 39px -8px rgba(0, 0, 0, 0.12);
+
+$text-dark: #000;
+$text-sub: #9a9a9a;
+
+$text-white: #fff;
+
+$blockquote-background: #f3f3f3;
+$blockquote-text: #606060;
+
+$text-default-letter-spacing: -2px;
+
+$home-meta-height: 400px;
+$home-card-height: 300px;
+
+$post-background-height: 500px;
+
+$dark-theme-background: rgb(9, 11, 17);
+$dark-theme-footer-background: rgba(65, 83, 105, 0.24);
+$dark-theme-text: $text-white;
+$dark-theme-text-sub: #808080;
+
+@mixin scrimGradient($startColor: $color-black, $direction: 'to bottom') {
+  $scrimCoordinates: (
+    0: 1,
+    19: 0.738,
+    34: 0.541,
+    47: 0.382,
+    56.5: 0.278,
+    65: 0.194,
+    73: 0.126,
+    80.2: 0.075,
+    86.1: 0.042,
+    91: 0.021,
+    95.2: 0.008,
+    98.2: 0.002,
+    100: 0
+  );
+
+  $hue: hue($startColor);
+  $saturation: saturation($startColor);
+  $lightness: lightness($startColor);
+  $stops: ();
+
+  @each $colorStop, $alphaValue in $scrimCoordinates {
+    $stop: hsla($hue, $saturation, $lightness, $alphaValue)
+      percentage($colorStop/100);
+    $stops: append($stops, $stop, comma);
+  }
+
+  background: linear-gradient(unquote($direction), $stops);
+}

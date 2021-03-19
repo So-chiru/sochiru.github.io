@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="layout-home">
+  {{ content }}
+
+  <div class="meta">
+    <div class="contents">
+      <img class="profile-image" src="https://www.gravatar.com/avatar/419a0140e7723838e6bd8ab3d2325b7d?s=90"></img>
+      <div class="texts">
+        <h1 class="title">{{ site.title | escape }}</h1>
+        <h3 class="subtitle">{{ site.subtitle | escape }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-links">
+    <div class="categories">
+      <item class="active">전체</item>
+      {%- for category in site.categories -%}
+        <item>{{ category.title }}</item>
+      {%- endfor -%}
+    </div>
+    <div class="views" ondragstart="return false;">
+      <!--<img src="{{ '/assets/svgs/reorder.svg' | relative_url }}"/>-->
+      <img class="active" src="{{ '/assets/svgs/border_all.svg' | relative_url }}"/>
+    </div>
+  </div>
+
+  <div class="posts">
+    {%- if site.posts.size > 0 -%}
+      {%- for post in site.posts -%}
+        <div class="card-post" onclick="openURL('{{ post.url | relative_url }}')" aria-label="{{ post.title }}: 게시글 열기">
+          {%- if post.background -%}
+            <div class="background-layer"></div>
+            <img class="background-image" data-resize data-lazyload src="{{ post.background | relative_url }}"></img>
+          {%- endif -%}
+
+          <div class="contents">
+            <h1 class="title" title="{{ post.title | escape }}">
+              {{ post.title | escape }}
+            </h1>
+
+            <div class="metadata">
+              {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
+              {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
+
+              <span class="post-meta">{{ post.date | date: date_format }} 게시, <img class="icon" src="{{ '/assets/svgs/time.svg' | relative_url }}"></img> 읽는데 약 {{read_time}}분 소요</span>
+            </div>
+
+            <div class="excerpt">
+              <span>{{ post.content | strip_html | strip_newlines | truncate: 128 | truncatewords: 16 }}</span>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <p>게시글이 없어요.</p>
+    {%- endif -%}
+  </div>
+</div>

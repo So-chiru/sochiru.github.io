@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "테스트 게시글"
+date:   2021-03-19 01:07:13 +0900
+categories: daily
+background: /assets/posts/2021-03-19-test/background.jpg
+---
+
+무야호오~~~
+
+<img src="{{ '/assets/posts/2021-03-19-test/screenshot.png' | relative_url }}">
+
+블로그 만드신만큼 신나시는거지~
+
+```rust
+fn main() {
+    println!("Goodbye, world!");
+}
+```

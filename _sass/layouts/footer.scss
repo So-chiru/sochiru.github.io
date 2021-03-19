@@ -1,0 +1,74 @@
+@import '../global.scss';
+
+html.dark .footer {
+  background: $dark-theme-footer-background;
+
+  .center {
+    .icons {
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.footer {
+  display: block;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  bottom: 0;
+  margin-top: 300px;
+
+  background: $footer-background;
+  display: flex;
+
+  .center {
+    margin: auto;
+    display: grid;
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h3,
+    p {
+      margin: auto;
+      letter-spacing: $text-default-letter-spacing;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: $text-sub;
+    }
+
+    .icons {
+      display: flex;
+      margin: auto;
+      user-select: none;
+
+      img {
+        cursor: pointer;
+        transition: 0.23s transform cubic-bezier(0.19, 1, 0.22, 1);
+
+        &:hover {
+          transform: scale(0.9);
+        }
+        
+        width: 24px;
+        height: 24px;
+        fill: #000;
+      }
+
+      & > * {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: unset;
+        }
+      }
+    }
+  }
+}

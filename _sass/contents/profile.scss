@@ -1,0 +1,9 @@
+@import '../global.scss';
+
+img.profile-image {
+  border-radius: 50%;
+  width: $profile-size;
+  height: $profile-size;
+
+  box-shadow: $shadow-level1;
+}
