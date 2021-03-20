@@ -12,7 +12,7 @@ layout: default
     <h1 class="post-title">{{ page.title | escape }}</h1>
     {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
     <p class="post-meta">{{ page.date | date: date_format }}</p>
-    {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
+    {%- assign read_time = content | strip_html | number_of_words | plus: 91 | divided_by: 180 -%}
     {%- if read_time < 1 -%}
     {%- assign read_time_text = "1분 이하" -%}
     {%- else -%}

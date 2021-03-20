@@ -125,6 +125,10 @@ html.dark .post-top {
 }
 
 .post-context {
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -1px;
+  }
+  
   p {
     font-weight: 400;
     font-size: 18px;

@@ -44,7 +44,7 @@ layout: default
 
             <div class="metadata">
               {%- assign date_format = site.date_format | default: "%Y년 %-m월 %-d일" -%}
-              {%- assign read_time = post.content | strip_html | number_of_words | plus: 101 | divided_by: 200 -%}
+              {%- assign read_time = post.content | strip_html | number_of_words | plus: 91 | divided_by: 180 -%}
               {%- if read_time < 1 -%}
               {%- assign read_time_text = "1분 이하" -%}
               {%- else -%}
