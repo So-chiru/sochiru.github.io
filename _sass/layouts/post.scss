@@ -80,6 +80,7 @@ html.dark .post-top {
     letter-spacing: $text-default-letter-spacing;
     font-weight: bold;
     top: $post-background-height - 150px;
+    width: 70%;
 
     @media screen and (max-width: $page-width) {
       margin-left: 5%;
@@ -91,15 +92,19 @@ html.dark .post-top {
 
     .post-title {
       font-size: 36px;
+      max-width: 80%;
+      line-height: 36px;
+      word-break: keep-all;
 
       @media screen and (max-width: $mobile-page-width) {
         font-size: 32px;
+        line-height: 32px;
       }
     }
 
     .post-meta {
       font-size: 18px;
-      margin-top: -3px;
+      margin-top: 3px;
       font-weight: normal;
       color: $text-sub;
       margin-bottom: 3px;
@@ -125,10 +130,15 @@ html.dark .post-top {
 }
 
 .post-context {
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     letter-spacing: -1px;
   }
-  
+
   p {
     font-weight: 400;
     font-size: 18px;
@@ -137,6 +147,16 @@ html.dark .post-top {
     br {
       display: inline;
     }
+
+    @media screen and (max-width: $mobile-page-width) {
+      font-size: 16px;
+    }
+  }
+
+  .highlighter-rouge {
+    width: 100%;
+    position: relative;
+    overflow: auto;
   }
 
   & > br {
@@ -162,9 +182,11 @@ html.dark .post-top {
   z-index: 1000;
   width: 95%;
   margin: auto;
+  word-break: keep-all;
 
   @media screen and (max-width: $mobile-page-width) {
     margin-top: 5vh;
+    max-width: 95vw;
   }
 }
 
