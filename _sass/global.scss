@@ -37,6 +37,8 @@ $dark-theme-footer-background: rgba(65, 83, 105, 0.24);
 $dark-theme-text: $text-white;
 $dark-theme-text-sub: #808080;
 
+$anchor-color: rgb(24, 122, 241);
+
 @mixin scrimGradient($startColor: $color-black, $direction: 'to bottom') {
   $scrimCoordinates: (
     0: 1,

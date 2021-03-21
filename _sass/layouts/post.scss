@@ -136,13 +136,13 @@ html.dark .post-top {
   h4,
   h5,
   h6 {
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
   }
 
   p {
     font-weight: 400;
     font-size: 18px;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 
     br {
       display: inline;
@@ -154,9 +154,42 @@ html.dark .post-top {
   }
 
   .highlighter-rouge {
-    width: 100%;
-    position: relative;
-    overflow: auto;
+    border-radius: 16px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    &:not(code) {
+      width: 90%;
+      position: relative;
+      overflow: auto;
+
+      padding: 10px 20px;
+    }
+
+    &:is(code) {
+      padding: 2px 4px;
+
+      &.language-plaintext {
+        background: darken($blockquote-background, 50);
+        color: #fff;
+      }
+    }
+  }
+
+  a {
+    color: $anchor-color;
+    text-decoration: none;
+    transition: 0.23s color cubic-bezier(0.19, 1, 0.22, 1);
+
+    @media(hover: hover) and (pointer: fine) {
+      &:hover {
+        color: darken($anchor-color, 10);
+      }
+    }
+
+    &:active {
+      color: darken($anchor-color, 20);
+    }
   }
 
   & > br {

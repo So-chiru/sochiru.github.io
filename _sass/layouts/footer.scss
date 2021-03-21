@@ -62,8 +62,10 @@ html.dark .footer {
         cursor: pointer;
         transition: 0.23s transform cubic-bezier(0.19, 1, 0.22, 1);
 
-        &:hover {
-          transform: scale(0.9);
+        @media(hover: hover) and (pointer: fine) {
+          &:hover {
+            transform: scale(0.9);
+          }
         }
         
         width: 24px;

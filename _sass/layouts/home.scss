@@ -164,8 +164,7 @@ html.dark .blog-links {
   display: flex;
 
   overflow: hidden;
-  min-height: $home-card-height;
-  height: 33vh;
+  min-height: 33vh;
   max-height: $home-card-height;
   isolation: isolate;
   color: $text-white;
@@ -181,24 +180,22 @@ html.dark .blog-links {
     margin: unset;
   }
 
-  @media screen and (max-width: $page-width) {
-    min-height: $home-card-height / 1.5;
-  }
-
   transition: 0.3s transform cubic-bezier(0.19, 1, 0.22, 1);
   transform: perspective(1000px);
 
-  &:hover {
-    .background-image {
-      filter: saturate(150%);
-      transform: scale(1.03);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .background-image {
+        filter: saturate(150%);
+        transform: scale(1.03);
+      }
+  
+      .background-layer {
+        transform: translateY(-25%);
+      }
+  
+      transform: perspective(2000px) rotateX(19deg) rotateY(0deg) rotateZ(1deg);
     }
-
-    .background-layer {
-      margin-top: -25%;
-    }
-
-    transform: perspective(2000px) rotateX(19deg) rotateY(0deg) rotateZ(1deg);
   }
 
   .background-image,
@@ -218,7 +215,7 @@ html.dark .blog-links {
   }
 
   .background-layer {
-    height: 200%;
+    height: 150%;
     z-index: 5;
     transition: 0.3s all cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -256,6 +253,11 @@ html.dark .blog-links {
     }
   }
 
+  .title, .metadata, .excerpt {
+    max-width: 90%;
+    word-break: keep-all;
+  }
+
   .title {
     font-weight: bold;
     letter-spacing: -3px;
@@ -264,12 +266,14 @@ html.dark .blog-links {
   }
 
   &:hover {
-    .metadata, .excerpt {
+    .metadata,
+    .excerpt {
       opacity: 0.8;
     }
   }
 
-  .metadata, .excerpt {
+  .metadata,
+  .excerpt {
     opacity: 0.6;
   }
 
@@ -281,6 +285,10 @@ html.dark .blog-links {
     letter-spacing: $text-default-letter-spacing;
     max-width: 90%;
     max-height: 50px;
+
+    @media screen and (max-width: $mobile-page-width) {
+      font-size: 14px;
+    }
   }
 
   .post-meta {
